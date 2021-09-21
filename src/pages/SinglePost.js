@@ -47,7 +47,7 @@ const SinglePost = (props) => {
       created,
       username,
       likeCount,
-      commentCount,
+    
       likes,
       comments,
     } = data.getPost;

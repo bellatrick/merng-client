@@ -8,7 +8,7 @@ import {
   Image,
   Button,
   Popup,
-  Container,
+ 
 } from "semantic-ui-react";
 import { AuthContext } from "../context/auth";
 import LikeButton from "./LikeButton";
@@ -22,7 +22,7 @@ const PostCard = (props) => {
     id,
     username,
     likeCount,
-    commentCount,
+   
     likes,
   } = props.post;
 
