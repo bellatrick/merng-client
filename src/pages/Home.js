@@ -5,6 +5,7 @@ import { Grid, Transition } from "semantic-ui-react";
 import PostCard from "../components/PostCard";
 import { AuthContext } from "../context/auth";
 import PostForm from "../components/PostForm";
+import {CircularProgress} from '@material-ui/core'
 const Home = () => {
   const { user } = useContext(AuthContext);
   const { loading, data } = useQuery(FETCH_POSTS_QUERY);
@@ -23,7 +24,7 @@ const Home = () => {
           )}
 
           {loading ? (
-            <p>loading posts...</p>
+            <div className='circular-progress'><CircularProgress/></div>
           ) : (
             <Transition.Group>
               {data &&

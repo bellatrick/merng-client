@@ -19,16 +19,16 @@ const LikeButton = (props) => {
   });
   const likeButton = props.user ? (
     likes ? (
-      <Button color="teal">
+      <Button color="pink">
         <Icon name="heart" />
       </Button>
     ) : (
-      <Button color="teal" basic>
+      <Button color="pink" basic>
         <Icon name="heart" />
       </Button>
     )
   ) : (
-    <Button color="teal" basic as={Link} to="/login">
+    <Button color="pink" basic as={Link} to="/login">
       <Icon name="heart" />
     </Button>
   );
@@ -40,7 +40,7 @@ const LikeButton = (props) => {
           <Button as="div" labelPosition="right" onClick={likePost}>
             {" "}
             {likeButton}
-            <Label as="a" basic color="teal" pointing="left">
+            <Label as="a" basic color="pink" pointing="left">
               {props.likeCount}
             </Label>
           </Button>

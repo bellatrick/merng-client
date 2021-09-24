@@ -6,9 +6,9 @@ import { Button, Confirm, Icon, Popup } from "semantic-ui-react";
 import { cloneDeep } from "@apollo/client/utilities";
 const DeleteButton = ({ postId, callback, commentId }) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
+
   const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
   const [deletePostOrComment] = useMutation(mutation, {
-    variables: { postId, commentId },
     update(proxy) {
       setConfirmOpen(false);
       if (!commentId) {
@@ -18,6 +18,7 @@ const DeleteButton = ({ postId, callback, commentId }) => {
       }
       if (callback) callback();
     },
+     variables: { postId, commentId },
   });
   return (
     <>
@@ -48,16 +49,15 @@ const DELETE_POST_MUTATION = gql`
   }
 `;
 const DELETE_COMMENT_MUTATION = gql`
-  mutation deleteComment($postId: ID!, $commentPost: ID!) {
+  mutation deleteComment($postId: ID!, $commentId: ID!) {
     deleteComment(postId: $postId, commentId: $commentId) {
-      id
+      id 
       comments {
         id
-        username
-        created
         body
+        created
+        username
       }
-      commentCount
     }
   }
 `;

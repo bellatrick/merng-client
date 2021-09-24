@@ -1,3 +1,10 @@
+.circular-progress{
+  margin: 90px auto;
+  width: 100px;
+}
+.post-form{
+  margin-top: 30px !important;
+}
 .page-title{
   display: block !important;
   text-align: center;

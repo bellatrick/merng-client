@@ -40,7 +40,7 @@ const PostForm = () => {
     createPost();
   }
   return (
-    <Form onSubmit={onSubmit}>
+    <Form className='post-form' onSubmit={onSubmit}>
       <h2>Create a post:</h2>
       <Form.Field>
         <Form.Input

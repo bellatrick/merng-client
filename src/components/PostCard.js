@@ -29,7 +29,7 @@ const PostCard = (props) => {
   return (
     <div className='ui two column grid container'>
       <Card fluid>
-        <Card.Content>
+        <Card.Content >
           <Image
             floated="right"
             size="mini"

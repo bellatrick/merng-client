@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 import React, { useContext, useState, useRef } from "react";
 import moment from "moment";
 import { useQuery, useMutation } from "@apollo/react-hooks";
-
+import {CircularProgress} from '@material-ui/core'
 import {
   Button,
   Card,
@@ -39,15 +39,14 @@ const SinglePost = (props) => {
   };
   let postMarkup;
   if (!data?.getPost) {
-    postMarkup = <p>Loading post...</p>;
+    postMarkup = <div className='circular-progress'><CircularProgress/></div>;
   } else {
     const {
       id,
       body,
       created,
       username,
-      likeCount,
-    
+      likeCount, 
       likes,
       comments,
     } = data.getPost;
