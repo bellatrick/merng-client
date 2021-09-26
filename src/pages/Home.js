@@ -13,7 +13,7 @@ const Home = () => {
     console.log(data);
   }
   return (
-    <div>
+    <div style={{marginTop:20}}>
       <Grid stackable columns={3}>
         <Grid.Row></Grid.Row>
         <Grid.Row>
